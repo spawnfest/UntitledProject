@@ -14,7 +14,9 @@
 
 ;; fixme, error handling on file.
 (defun load-template (template-file)
-  (let (((tuple status contents) (: file read_file template-file)))
+  (let* ((priv-dir (: code priv_dir 'untitled))
+         (file-path (++ priv-dir "/" template-file))
+         ((tuple status contents) (: file read_file file-path)))
     (list contents )))
 
 (defun handle
@@ -26,7 +28,7 @@
                      "Cache-Control: no-cache"
                      "Cache-Control: no-store"
                      "\r\n"))
-          (body (load-template "/tmp/hello.txt")))
+          (body (load-template "hello.txt")))
      (lfe_io:format "headers: ~p~n" `(,headers))
      (lfe_io:format "body: ~p~n~n" `(,body))
      (barista:response 200 headers body))))
