@@ -27,7 +27,7 @@
   (('POST (list (binary ("chapter1-clicked")) )(= `#m(body ,body) req))
    (progn
      (let* ((headers (generate-headers))
-            (body (list (template:load "chapter1-post-response.html"))))
+            (body (list (binary "<b> This is just a html fragment </b>"))))
        (lfe_io:format "headers: ~p~n" `(,headers))
        (barista:response 200 headers body))))
 

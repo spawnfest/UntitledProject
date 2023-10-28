@@ -51,6 +51,15 @@ $ rebar3 as test lfe test
 
 TBD
 
+
+## Roadmap [&#x219F;](#roadmap)
+
+[~] Create a tutorial of basic HTMX used with LFE.
+[x] Provide a simple working LFE web server that serves html.
+[x] Provide an example of serving htmx from LFE.
+[ ] Create a playground which serves up simple editable html page and a lfe handler.
+[ ] Provide advanced examples of per user processes linked to a single page (advanced, probably after spawnfest).
+
 ## License [&#x219F;](#table-of-contents)
 
 Apache License, Version 2.0
