@@ -1,10 +1,10 @@
 (defmodule untitled-project
   (export
-   (my-fun 0)))
+   (start 0)))
 
 ;;; -----------
 ;;; library API
 ;;; -----------
 
-(defun my-fun ()
+(defun start ()
   'hello-world)
