@@ -1,0 +1,27 @@
+name: rebar-testing
+
+on:
+  push:
+    branches: [ main ]
+
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    name: Build and run on OTP-26 and latest LFE.
+    runs-on: ubuntu-latest
+
+    container:
+      image: erlang:26
+      
+    steps:
+    - uses: actions/checkout@v4
+    - name: Check rebar3 Version
+      run: DEBUG=1 rebar3 --version
+    - name: Compile
+      run: rebar3 lfe compile
+   
+    - name: Run Tests
+      run: rebar3 as test eunit
