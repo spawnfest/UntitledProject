@@ -1,13 +1,26 @@
 # Untitled Project - The Cyber Laser Bison Story.
 
+[![Build Status][gh-actions-badge]][gh-actions]
+[![LFE Versions][lfe badge]][lfe]
+[![Erlang Versions][erlang badge]][version]
+[![Tags][github tags badge]][github tags]
 
-BEAM developers, Are you tired of writing endless lines of JavaScript code just to update your web page dynamically? Do you wish there was a simpler, more magical way to create interactive web applications? You're in luck because HTMX is here to revolutionize your web development experience. 🪄✨. 
+[![Project Logo][logo]][logo-large]
 
-What is HTMX?
 
-🚀 htmx is not just another web development library; it's pure web development magic! Think of it as your secret potion to create dynamic, interactive, and fast web applications with minimal effort.   No "React" in sight, no frameworks.  We bring the "Hype" back into Hyper Text Markup Language.
+##### Table of Contents
 
-## Description
+* [About](#about-)
+* [Build](#build-)
+* [Start the Project REPL](#start-the-repl-)
+* [Tests](#tests-)
+* [Usage](#usage-)
+* [License](#license-)
+
+## About [&#x219F;](#table-of-contents)
+
+🚀 HTMX is not just another web development library; it's pure web development magic! Think of it as your secret potion to create dynamic, inte ractive, and fast web applications with minimal effort.   No "React" in sight, no frameworks.  We bring the "Hype" back into Hyper Text Markup L
+anguage.
 
 The Untitled Project is ultimately a learning tool.  Its an interactive experience that demonstrates the
 unstopable power of using Lisp Flavored Erlang on the backend and HTMX on the front.
@@ -15,53 +28,46 @@ unstopable power of using Lisp Flavored Erlang on the backend and HTMX on the fr
 Each micro lesson provides both backend and frontend code for the reader to observe and interact with while
 not having to setup the full stack in a safe and controlled environment.
 
-## Getting Started
+## Build [&#x219F;](#table-of-contents)
 
-### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex.  Linux.
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-
-```
-code blocks for commands
+```shell
+$ rebar3 lfe compile
 ```
 
-## Help
+# Start the Project REPL [&#x219F;](#table-of-contents)
 
-Any advise for common problems or issues.
+```shell
+$ rebar3 lfe repl
 ```
-command to run if program contains helper info
+
+# Tests [&#x219F;](#table-of-contents)
+
+```shell
+$ rebar3 as test lfe test
 ```
 
-## Authors
+## Usage [&#x219F;](#table-of-contents)
 
-Contributors names and contact info.
+TBD
 
-Wade Mealing
-[@WadeMealing](https://twitter.com/wademealing) or [@WadeMealing](https://genserver.social/wmealing)
+## License [&#x219F;](#table-of-contents)
 
+Apache License, Version 2.0
 
-## Version History
+Copyright © 2023, Wade Mealing <wmealing@gmail.com>.
 
-* 0.1
-    * Initial Release
+<!-- Named page links below: /-->
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [HTMX.org](https://htmx.org/)
-
+[logo]: https://avatars1.githubusercontent.com/u/3434967?s=250
+[logo-large]: https://avatars1.githubusercontent.com/u/3434967
+[github]: https://github.com/ORG/untitled-project
+[gitlab]: https://gitlab.com/ORG/untitled-project
+[gh-actions-badge]: https://github.com/ORG/untitled-project/workflows/build/badge.svg
+[gh-actions]: https://github.com/ORG/untitled-project/actions?query=workflow%3Abuild+
+[lfe]: https://github.com/lfe/lfe
+[lfe badge]: https://img.shields.io/badge/lfe-2.1-blue.svg
+[erlang badge]: https://img.shields.io/badge/erlang-19%20to%2025-blue.svg
+[version]: https://github.com/ORG/untitled-project/blob/master/.github/workflows/cicd.yml
+[github tags]: https://github.com/ORG/untitled-project/tags
+[github tags badge]: https://img.shields.io/github/tag/ORG/untitled-project.svg
+[github downloads]: https://img.shields.io/github/downloads/ORG/untitled-project/total.svg
