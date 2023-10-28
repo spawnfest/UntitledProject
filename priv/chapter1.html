@@ -7,18 +7,9 @@
           rel="stylesheet">
     <script src="https://unpkg.com/htmx.org@1.9.6"></script>
 
-    <style>
-      html {
-          max-width: 70ch;
-          padding: 3em 1em;
-          margin: auto;
-          line-height: 1.5;
-          font-size: 1.25em;
-      }
-    </style>
 </head>
 
-<body class="">
+<body class="px-10">
     <h1 class="text-black-600 text-5xl font-bold">
 	HTMX AND LFE
     </h1>
@@ -54,6 +45,8 @@
         element.  Check this out:
       </p>
 
+      <br>
+      
       <div class="py-5">
          &lt;button hx-post=&quot;/clicked&quot; hx-swap=&quot;outerHTML&quot;&gt;<br>
          Click Me <br>
@@ -72,72 +65,72 @@
       </p>
 
       <div class="py-5">
-          <button hx-post="/chapter1-clicked" hx-swap="outerHTML">
+          <button hx-post="/chapter1-clicked" hx-swap="outerHTML" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Click Me
           </button>
       </div>
 
       <p class="py-5">
-        Of course this needs backend code to work correctly,  You'd need to whip up a simple
-        web server that suits your needs.  If you check out the code for this project, you will
+        This is only the most simplest of examples, as they say, you gotta start small.
+      </p>
+
+      <b>The "Back end"</b>
+
+      <p class="py-5">
+        Of course this needs some server-side backend code to work correctly,  You'd need to
+        run a simple web server that suits your needs.  If you check out the code for this project, you will
         see that it is using "barista", a neat little HTTP server.
       <p>
 
       <p class="py-5">
-        Its super lightweight and throws some heavy lifting to the well tested 'erlang http server',
-        and the interface is nice to work with.
+        The main guts of Barista's work is done via a a <a href="https://github.com/lfe-http/barista/tree/main#creating-custom-modules-"> Custom module </a>.   We're going to create a custom module that deals with the HTTP Post request.   Its really much simpler than you think.
       </p>
 
       <p class="py-5">
-        Lets make an example route that will handle the buttons click and return something simple.
-        The 'handle' function in 'src/barista-routes.lfe' is where we will wil start.
+        In the example below, we're going to put all the functions below into a single function and
+        lean heavily on LFE's Pattern Matching to uniquely identify http requests to barista.
       </p>
 
       <p class="py-5">
-        Notes: I should make an add-handler macro, that might make this easier.  I will think
-        on it, this has been a long day already.
+        Here is the 'fallthrough' example.
       </p>
 
       <br>
 
       <pre>
-        (defun handle (('POST (list (binary ("chapter1")) (binary ("clicked")  (= `#m(body ,body) req))
-        (progn
-          (lfe_io:format "Getting HTML from server for chapter1" '())
-          (let* ((headers (generate-headers))
-          (body (list (template:load "chapter1-post-request.html"))))
-          (lfe_io:format "headers: ~p~n" `(,headers))
-        (barista:response 200 headers body)))))
+(defun handle
+  ((method path (= `#m(body ,body) req))
+   (progn
+     (let* ((headers '("Content-Type: text/html", "\r\n"))
+            (body "Why Hello there !"))
+     (barista:response 200 headers body)))))
       </pre>
 
-
-      <div class="py-5">
-
-        <b class="py-5">Motiviation</b>
-
-        <ol class="py-5 list-disc">
-          <li>Why should only a and form be able to make HTTP requests?</li>
-          <li>Why should only click & submit events trigger them?</li>
-          <li>Why should only GET & POST methods be available?</li>
-          <li>Why should you only be able to replace the entire screen?</li>
-        </ol>
-      </div>
-
-      <p class="py-5">
-      By removing these arbitrary constraints, htmx completes HTML as hypertext.
+      <p class="py-5 text-9xl">
+        In our example, we want to handle the HTTP POST verb, and return a HTML fragment.
+        The "method" is an erlang atom 'GET 'POST etc.
+        The "path" pattern is a binary list #"chapter1" #"nextpath", which doesnt include the "/" path
+        separators.
       </p>
 
       <p class="py-5">
-      Why does this matter ? Because almost all of the actions you want to do from the
-      web client to the server are http verbs, previous locked up behind javascript and json.
+        Lets add a handler specifically for the "/chapter1-clicked"
       </p>
+
+      <pre>
+        ;; previous function headers here.
+(('POST (list (binary ("chapter1-clicked")) )(= `#m(body ,body) req))
+  (progn
+    (let* ((headers (generate-headers))
+           (body (list (template:load "chapter1-post-response.html"))))
+           (barista:response 200 headers body))))
+        ..
+
+      </pre>
 
       <p class="py-5 text-9xl">
-        <a href="/chapter1" hx-boost="true">Next Chapter →</a>
+       <a href="/chapter1" hx-boost="true">← Previous Chapter</a> || <a href="/chapter2" hx-boost="true">Next Chapter →</a>
       </p>
-
-
-
 </div>
 </body>
 </html>

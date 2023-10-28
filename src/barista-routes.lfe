@@ -9,7 +9,6 @@
             (mref req 'path)
             req)))
 
-
 (defun generate-headers ()
   '("Content-Type: text/html"
     "Cache-Control: no-cache"
@@ -27,7 +26,6 @@
 
   (('POST (list (binary ("chapter1-clicked")) )(= `#m(body ,body) req))
    (progn
-     (lfe_io:format "CHAPTER 1 CLICKED~n" '())
      (let* ((headers (generate-headers))
             (body (list (template:load "chapter1-post-response.html"))))
        (lfe_io:format "headers: ~p~n" `(,headers))
