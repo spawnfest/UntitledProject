@@ -25,6 +25,14 @@
          (lfe_io:format "headers: ~p~n" `(,headers))
          (barista:response 200 headers body))))
 
+  (('POST (list (binary ("chapter1-clicked")) )(= `#m(body ,body) req))
+   (progn
+     (lfe_io:format "CHAPTER 1 CLICKED~n" '())
+     (let* ((headers (generate-headers))
+            (body (list (template:load "chapter1-post-response.html"))))
+       (lfe_io:format "headers: ~p~n" `(,headers))
+       (barista:response 200 headers body))))
+
   ;; catch all, i guess.
   ((method path (= `#m(body ,body) req))
    (progn
@@ -35,13 +43,8 @@
      (let* ((headers (generate-headers))
             (body (list (template:load "index.html"))))
        (lfe_io:format "headers: ~p~n" `(,headers))
-       (barista:response 200 headers body))))
-  )
+       (barista:response 200 headers body)))))
 
 
 
-(defun safety-check
 
-    (('ok msg) (io:format "~s seems good.~n" (list msg)))
-  (('warn msg) (io:format "There's a problem with ~s.~n" (list msg)))
-  (('crit msg) (io:format "Be careful of ~s.~n" (list msg))))

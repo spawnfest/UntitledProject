@@ -72,7 +72,7 @@
       </p>
 
       <div class="py-5">
-          <button hx-post="/chapter1/clicked" hx-swap="outerHTML">
+          <button hx-post="/chapter1-clicked" hx-swap="outerHTML">
             Click Me
           </button>
       </div>
@@ -84,14 +84,31 @@
       <p>
 
       <p class="py-5">
-
+        Its super lightweight and throws some heavy lifting to the well tested 'erlang http server',
+        and the interface is nice to work with.
       </p>
 
       <p class="py-5">
+        Lets make an example route that will handle the buttons click and return something simple.
+        The 'handle' function in 'src/barista-routes.lfe' is where we will wil start.
+      </p>
 
+      <p class="py-5">
+        Notes: I should make an add-handler macro, that might make this easier.  I will think
+        on it, this has been a long day already.
       </p>
 
       <br>
+
+      <pre>
+        (defun handle (('POST (list (binary ("chapter1")) (binary ("clicked")  (= `#m(body ,body) req))
+        (progn
+          (lfe_io:format "Getting HTML from server for chapter1" '())
+          (let* ((headers (generate-headers))
+          (body (list (template:load "chapter1-post-request.html"))))
+          (lfe_io:format "headers: ~p~n" `(,headers))
+        (barista:response 200 headers body)))))
+      </pre>
 
 
       <div class="py-5">
