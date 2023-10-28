@@ -7,4 +7,5 @@
 ;;; -----------
 
 (defun start ()
-  'hello-world)
+  ;; FIXME: this should probably be ensure-all-started.
+  (barista-server-app:start))
