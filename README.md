@@ -4,6 +4,8 @@
 [![LFE Versions][lfe badge]][lfe]
 [![Erlang Versions][erlang badge]][version]
 [![Tags][github tags badge]][github tags]
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/spawnfest/UntitledProject/graphs/commit-activity)
+
 
 [![Project Logo][logo]][logo-large]
 
@@ -19,8 +21,7 @@
 
 ## About [&#x219F;](#table-of-contents)
 
-🚀 HTMX is not just another web development library; it's pure web development magic! Think of it as your secret potion to create dynamic, inte ractive, and fast web applications with minimal effort.   No "React" in sight, no frameworks.  We bring the "Hype" back into Hyper Text Markup L
-anguage.
+🚀 HTMX is not just another web development library; it's pure web development magic! Think of it as your secret potion to create dynamic, inte ractive, and fast web applications with minimal effort.   No "React" in sight, no frameworks.  We bring the "Hype" back into Hyper Text Markup Language.
 
 The Untitled Project is ultimately a learning tool.  Its an interactive experience that demonstrates the
 unstopable power of using Lisp Flavored Erlang on the backend and HTMX on the front.
