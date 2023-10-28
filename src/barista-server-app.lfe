@@ -3,7 +3,7 @@
   (export all))
 
 (defun config ()
-  '(#(port 5098)
+  '(#(port 8888)
     #(server_name "barista-server-app")
     #(modules (barista-routes))))
 
