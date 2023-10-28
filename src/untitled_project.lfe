@@ -1,4 +1,4 @@
-(defmodule untitled-project
+(defmodule untitled_project
   (export
    (start 0)))
 
@@ -8,5 +8,6 @@
 
 (defun start ()
   ;; FIXME: this should probably be ensure-all-started, or something.
-  (application:ensure_started  'untitled-project)
+  (application:ensure_all_started 'inets)
+  (application:ensure_all_started  'untitled_project)
   (barista-server-app:start))

@@ -1,4 +1,4 @@
-{application, 'untitled-project', [
+{application, 'untitled_project', [
     {description, "A run-ready LFE script"},
     {vsn, git},
     {registered, []},
