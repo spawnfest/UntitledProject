@@ -17,18 +17,20 @@
     "\r\n"))
 
 (defun handle
-    (("GET" "chapter1" (= `#m(body ,body) req))
+    (('GET (list (binary ("chapter1")))  (= `#m(body ,body) req))
      (progn
-       (lfe_io:format "Serving up get on chapter 1" '())
+       (lfe_io:format "Serving up get on chapter 1~n" '())
        (let* ((headers (generate-headers))
-              (body (list (template:load "index.html"))))
+              (body (list (template:load "chapter1.html"))))
          (lfe_io:format "headers: ~p~n" `(,headers))
          (barista:response 200 headers body))))
 
   ;; catch all, i guess.
   ((method path (= `#m(body ,body) req))
    (progn
+     (lfe_io:format "METHOD IS ATOM?: ~p~n" (list (is_atom method)))
      (lfe_io:format "method: ~p~n" (list method))
+     (lfe_io:format "catch all~n" '())
      (lfe_io:format "path: ~p~n" (list path))
      (let* ((headers (generate-headers))
             (body (list (template:load "index.html"))))

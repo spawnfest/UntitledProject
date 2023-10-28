@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tank Bison with lazer eyes.</title>
+    <meta charset="UTF-8">
+    <link href= "https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+          rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+
+    <style>
+      html {
+          max-width: 70ch;
+          padding: 3em 1em;
+          margin: auto;
+          line-height: 1.5;
+          font-size: 1.25em;
+      }
+    </style>
+</head>
+
+<body class="">
+    <h1 class="text-black-600 text-5xl font-bold">
+	HTMX AND LFE
+    </h1>
+    <b>Setting up your HTML.</b>
+
+    <div class="py-5">
+
+      <p class="py-5">
+        In the introduction, I talked about not having to write javascript.  Which is mostly true,
+        we still however need to include some javascript to supercharge our standard elements. 
+        The first step is to include the HTMX script inside the  &lt;head&gt; &lt;/head&gt; tags
+        of your HTML document.
+      </p>
+
+      <p class="py-5">
+        At the time of writing the most current is: 
+      </p>
+
+      <p class="py-5">
+	   &lt;script src=&quot;https://unpkg.com/htmx.org@1.9.6&quot;&gt;&lt;/script&gt;
+      </p>
+
+      <p class="py-5">
+        Without this the extra attributes on html markup wont do anything, so best to include
+        it if you want the magic to happen.
+      </p>
+
+      <b>The simplest example.</b>
+
+      <p class="py-5">
+        Most time, button clicks trigger a javascript event, this might be a server query
+        or a modification of the page.  HTMX reduces this complexity to elements on any html
+        element.  Check this out:
+      </p>
+
+      <div class="py-5">
+         &lt;button hx-post=&quot;/clicked&quot; hx-swap=&quot;outerHTML&quot;&gt;<br>
+         Click Me <br>
+         &lt;/button&gt;<br>
+      </div>
+
+      <p class="py-5">
+        The hx-post and hx-swap attributes on this button tell htmx:
+        <br>
+        “When a user clicks on this button, issue an AJAX request to /clicked, and replace
+        the entire button with the HTML response”
+      </p>
+
+      <p class="py-5">
+        So much power in so little, I've got this example hooked up right here:
+      </p>
+
+      <div class="py-5">
+          <button hx-post="/chapter1/clicked" hx-swap="outerHTML">
+            Click Me
+          </button>
+      </div>
+
+      <p class="py-5">
+        Of course this needs backend code to work correctly,  You'd need to whip up a simple
+        web server that suits your needs.  If you check out the code for this project, you will
+        see that it is using "barista", a neat little HTTP server.
+      <p>
+
+      <p class="py-5">
+
+      </p>
+
+      <p class="py-5">
+
+      </p>
+
+      <br>
+
+
+      <div class="py-5">
+
+        <b class="py-5">Motiviation</b>
+
+        <ol class="py-5 list-disc">
+          <li>Why should only a and form be able to make HTTP requests?</li>
+          <li>Why should only click & submit events trigger them?</li>
+          <li>Why should only GET & POST methods be available?</li>
+          <li>Why should you only be able to replace the entire screen?</li>
+        </ol>
+      </div>
+
+      <p class="py-5">
+      By removing these arbitrary constraints, htmx completes HTML as hypertext.
+      </p>
+
+      <p class="py-5">
+      Why does this matter ? Because almost all of the actions you want to do from the
+      web client to the server are http verbs, previous locked up behind javascript and json.
+      </p>
+
+      <p class="py-5 text-9xl">
+        <a href="/chapter1" hx-boost="true">Next Chapter →</a>
+      </p>
+
+
+
+</div>
+</body>
+</html>
