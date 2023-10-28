@@ -29,7 +29,7 @@
                        "Cache-Control: no-cache"
                        "Cache-Control: no-store"
                        "\r\n"))
-            (body (load-template "hello.txt")))
+            (body (load-template "index.html")))
        (lfe_io:format "headers: ~p~n" `(,headers))
        (lfe_io:format "body: ~p~n~n" `(,body))
        (barista:response 200 headers body))))
