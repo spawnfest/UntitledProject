@@ -9,7 +9,7 @@
 
 (defun start ()
   (barista:start (config))
-  (: timer sleep 'infinity)
+;;  (: timer sleep 'infinity)
   )
 
 (defun start (_type _args)

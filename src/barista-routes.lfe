@@ -1,7 +1,9 @@
 (defmodule barista-routes
   (export
    (do 1)
-   (handle 3)))
+   (handle 3)
+   (load-template 1)
+   ))
 
 
 (defun do (httpd-req)
@@ -10,17 +12,21 @@
             (mref req 'path)
             req)))
 
+;; fixme, error handling on file.
+(defun load-template (template-file)
+  (let (((tuple status contents) (: file read_file template-file)))
+    (list contents )))
 
 (defun handle
   ((method path (= `#m(body ,body) req))
    "Example handler that displays whatever is passed through."
    (lfe_io:format "method: ~p~n" (list method))
    (lfe_io:format "path: ~p~n" (list path))
-   (let* ((headers '("Content-Type: text/plain"
+   (let* ((headers '("Content-Type: text/html"
                      "Cache-Control: no-cache"
                      "Cache-Control: no-store"
                      "\r\n"))
-          (body "hey there!\r\n"))
+          (body (load-template "/tmp/hello.txt")))
      (lfe_io:format "headers: ~p~n" `(,headers))
      (lfe_io:format "body: ~p~n~n" `(,body))
      (barista:response 200 headers body))))
