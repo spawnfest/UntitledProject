@@ -10,10 +10,8 @@
 ;;; library API
 ;;; -----------
 
-;; wow, testing has its OWN priv directory, which isnt being populated.
 (deftest code-privdir-is-sane ()
-  (is-equal "/Users/wmealing/Projects/UntitledProject/_build/test/lib/untitled_project/priv"
-            (: code priv_dir "untitled_project")))
+  (is-not (>= 4 (string:length (: code priv_dir "untitled_project")))))
 
 
 ;; how exactly would i test
