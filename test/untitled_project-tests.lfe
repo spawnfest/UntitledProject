@@ -11,5 +11,5 @@
   'hello-world
   )
 
-(deftest my-fun
-  (is-equal 'hello-world (untitled_project-tests:t)))
+(deftest template-loads-correctly
+  (is-equal "RESULT" (barista-utils:load-template "test-template.txt")))
