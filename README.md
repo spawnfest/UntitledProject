@@ -65,7 +65,7 @@ TBD
 ☐ Add github action to create container
  ☐ Update instructions on how to run container.
 
-[ ] Create a playground which serves up simple editable html page and a lfe handler.
+☐ Create a playground which serves up simple editable html page and a lfe handler.
 
 Post Spawnfest
 
