@@ -1,4 +1,4 @@
-name: rebar-testing
+name: build
 
 on:
   push:
