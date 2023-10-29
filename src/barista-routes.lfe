@@ -76,7 +76,7 @@
 
  ('PUT #"/live-demo/user-html"
        (progn
-         ;; FIXME: save the page in priv/user/user-demo.html
+         (write-to-file "priv/user/live.html" (maps:get "user-html" (barista-request:get-data req)))
          (barista-response:ok "page saved")))
 
  ('GET #"/live-demo/user-lfe"
@@ -85,8 +85,6 @@
 
  ('PUT #"/live-demo/user-lfe"
        (progn
-         ;;         (logger:alert (barista-request:get-data req))
-         (logger:alert (maps:get "user-lfe" (barista-request:get-data req)))
          (write-to-file "/tmp/user-demo.lfe" (maps:get "user-lfe" (barista-request:get-data req)))
          (compile-file "/tmp/user-demo.lfe")
          (barista-response:ok (erlang:binary_to_list (template:load "template-lfe.html")))))
@@ -97,6 +95,7 @@
 
  ('GET #"/go"
        (progn
+         (users-lfe:demo-handler (list_to_atom (mref req 'method)) (mref req 'path) req)
          (barista-response:ok (erlang:binary_to_list (template:load "user/live.html")))))
 
  ('GET #"/about"
