@@ -80,6 +80,14 @@ lfe> (untitled_project:start)
 
 Open http://localhost:8888 in your web browser and begin reading.
 
+# Run non-interactively
+
+```shell
+$ rebar3 lfe run
+```
+
+Open http://localhost:8888 in your web browser and begin reading.
+
 # Tests [&#x219F;](#table-of-contents)
 
 ```shell
