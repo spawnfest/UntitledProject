@@ -80,10 +80,15 @@ $ rebar3 as test lfe test
 
 ## Usage [&#x219F;](#table-of-contents)
 
+
 ```shell
 $ rebar3 lfe run
 ```
 
+```shell
+$ podman load --input image.tar
+$ podman run whatever
+```
 
 ## Roadmap [&#x219F;](#roadmap)
 
@@ -92,6 +97,8 @@ $ rebar3 lfe run
 ☑ Provide a simple working LFE web server that serves html.
 
 ☑ Provide an example of serving htmx from LFE.
+
+☐ Use Lanes as the router (less hassle than current)
 
 ☑ - Add github actions for quick test results.
 
