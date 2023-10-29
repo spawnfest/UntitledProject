@@ -60,9 +60,21 @@ TBD
 
 [x] Provide an example of serving htmx from LFE.
 
+[x] Add github actions for quick test results.
+
+[ ] Add github action to create container
+
+    [ ] Update instructions on how to run container.
+
 [ ] Create a playground which serves up simple editable html page and a lfe handler.
 
+Post Spawnfest
+
 [ ] Provide advanced examples of per user processes linked to a single page (advanced, probably after spawnfest).
+
+[ ] Create "export" of custom sandbox function for use in users project.
+
+[ ] Implement the "debug" HTMX extension.
 
 ## License [&#x219F;](#table-of-contents)
 
@@ -74,14 +86,13 @@ Copyright © 2023, Wade Mealing <wmealing@gmail.com>.
 
 [logo]: https://avatars1.githubusercontent.com/u/3434967?s=250
 [logo-large]: https://avatars1.githubusercontent.com/u/3434967
-[github]: https://github.com/ORG/untitled-project
-[gitlab]: https://gitlab.com/ORG/untitled-project
-[gh-actions-badge]: https://github.com/ORG/untitled-project/workflows/build/badge.svg
-[gh-actions]: https://github.com/ORG/untitled-project/actions?query=workflow%3Abuild+
+[github]: https://github.com/spawnfest/UntitledProject
+[gh-actions-badge]: https://github.com/spawnfest/UntitledProject/workflows/build/badge.svg
+[gh-actions]: https://github.com/spawnfest/UntitledProject/actions?query=workflow%3Abuild+
 [lfe]: https://github.com/lfe/lfe
 [lfe badge]: https://img.shields.io/badge/lfe-2.1-blue.svg
 [erlang badge]: https://img.shields.io/badge/erlang-19%20to%2025-blue.svg
-[version]: https://github.com/ORG/untitled-project/blob/master/.github/workflows/cicd.yml
-[github tags]: https://github.com/ORG/untitled-project/tags
-[github tags badge]: https://img.shields.io/github/tag/ORG/untitled-project.svg
+[version]: https://github.com/spawnfest/UntitledProject/blob/master/.github/workflows/cicd.yml
+[github tags]: https://github.com/spawnfest/UntitledProject/tags
+[github tags badge]: https://img.shields.io/github/tag/spawnfest/untitled-project.svg
 [github downloads]: https://img.shields.io/github/downloads/ORG/untitled-project/total.svg
