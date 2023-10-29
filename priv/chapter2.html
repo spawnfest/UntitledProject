@@ -219,11 +219,13 @@
       Form validation is NOT a solved problem,  Calling the <a href="https://github.com/erlangbureau/liver">liver</a> library looks to be one of the easier options.    In our example, we're going to do a check which will always fail, and then redirect to a validation error.
     </p>
 
-    
 <pre>
-(defun validate (id map)
-'false )
+(defun validate (id req)
+  ;; TODO: implement form validation
+  (if (== 1 1)
+      (barista-response:ok (erlang:binary_to_list (template:load "chapter2-error.html")))))
 </pre>
-    
+
+
 </body>
 </html>

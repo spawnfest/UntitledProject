@@ -21,11 +21,9 @@
 ;;     ))
 
 (defun validate (id req)
-
-  ;; unfortunately this doesn't validate
+  ;; TODO: implement form validation
   (if (== 1 1)
-      (barista-response:ok (erlang:binary_to_list (template:load "chapter2-error.html")))
-    ))
+      (barista-response:ok (erlang:binary_to_list (template:load "chapter2-error.html")))))
 
 (defroutes
  ;; This macro generates the handle/3 function used by do/1.
@@ -49,8 +47,7 @@
 
  ('PUT #"/chapter2/contact/:id"
        (progn
-         (validate id (barista-request:get-data req))
-         (barista-response:ok (erlang:binary_to_list (template:load "chapter2-edit.html")))))
+         (validate id (barista-request:get-data req))))
 
  ('GET #"/chapter2"
        (progn
