@@ -16,11 +16,12 @@ I have more written in the security context about XSS that is unable to be inclu
 
 
 Running the project:
-	If i get time, you can just run the container and visit http://containerip:8888
 
-	If you dont, i think you can git checkout the code.
+  - If i get time, you can just run the container and visit http://containerip:8888
+  - If you dont, i think you can git checkout the code.
+  - rebar3 lfe run
 
-	$ rebar3 lfe run
 
+No AI was used in the making of this project. 
 
 
