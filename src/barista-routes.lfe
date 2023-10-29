@@ -21,7 +21,11 @@
 ;;     ))
 
 (defun validate (id req)
-  )
+
+  ;; unfortunately this doesn't validate
+  (if (== 1 1)
+      (barista-response:ok (erlang:binary_to_list (template:load "chapter2-error.html")))
+    ))
 
 (defroutes
  ;; This macro generates the handle/3 function used by do/1.
