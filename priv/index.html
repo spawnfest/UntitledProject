@@ -35,6 +35,13 @@
           padding-left: 1.25rem; /* 20px */
           padding-right: 1.25rem; /* 20px */
       }
+
+      .center {
+          margin: auto;
+          width: 50%;
+          padding: 10px;
+      }
+
     </style>
 
 </head>
@@ -117,6 +124,12 @@
       <p class="py-5">
       Why does this matter ? Because almost all of the actions you want to do from the
       web client to the server are http verbs, previous locked up behind javascript and json.
+      </p>
+
+      <p>
+        If you fire up your web browsers "Developer tools", we can see how this is immediately
+        useful.  The the link to the next chapter below is clicked, it will not do a full page refresh.
+        Instead the contents will be inserted into the page without a full refresh.  Give it a go.
       </p>
 
       <p class="py-5 text-9xl">

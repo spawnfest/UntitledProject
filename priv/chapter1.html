@@ -77,7 +77,7 @@
 
       <p>
       <p>
-        In the 'common' use scenario, button clicks trigger a javascript event.  
+        In the 'common' use scenario, button clicks trigger a javascript event.
 
         HTMX reduces this complexity to elements on any html element.  Check this out:
       </p>
@@ -91,6 +91,7 @@
       </div>
 
       <p class="py-5">
+        
         The hx-post and hx-swap attributes on this button tell htmx:
         <br>
         “When a user clicks on this button, issue an AJAX request to /clicked, and replace
@@ -98,7 +99,7 @@
       </p>
 
       <p class="py-5">
-        So much power in so little, I've got this example hooked up right here:
+        So much power in so little code. I've got this example hooked up right here:
       </p>
 
       <div class="py-5">
@@ -108,7 +109,7 @@
       </div>
 
       <p class="py-5">
-        This is only the most simplest of examples, as they say, you gotta start small.
+        As they say, you gotta start small. 
       </p>
 
       <b>The "Back end"</b>
@@ -116,58 +117,49 @@
       <p class="py-5">
         Of course this needs some server-side backend code to work correctly,  You'd need to
         run a simple web server that suits your needs.  If you check out the code for this project, you will
-        see that it is using "barista", a neat little HTTP server.
+        see that it is using "barista" with "lanes", a neat little HTTP server and routing utility.
       <p>
 
-      <p class="py-5">
-        The main guts of Barista's work is done via a a <a href="https://github.com/lfe-http/barista/tree/main#creating-custom-modules-"> Custom module </a>.   We're going to create a custom module that deals with the HTTP Post request.   Its really much simpler than you think.
+      <p>
+        If you want specific versions of these libraries that are known to work together check out the deps
+        used by this project in its
+        <a href="https://github.com/spawnfest/UntitledProject/blob/main/rebar.config">rebar.config</a> file.
       </p>
 
-      <p class="py-5">
+      <p>
+        The main guts of Barista's work is done via a a <a href="https://github.com/lfe-http/barista/tree/main#creating-custom-modules-"> Custom module </a>.   We're going to create a custom module that hands routing off to "lanes"
+        to make things just that little bit easier to understand.
+      </p>
+
+      <p>
         In the example below, we're going to put all the functions below into a single function and
-        lean heavily on LFE's Pattern Matching to uniquely identify http requests to barista.
-      </p>
-
-      <p class="py-5">
-        Here is the 'fallthrough' example.
+        uses the "defroutes" macro supplied by the lanes library.  We're going to start here by defining a
+        single route that the app will use when the button is clicked on.
       </p>
 
       <br>
 
       <pre>
-(defun handle
-  ((method path (= `#m(body ,body) req))
-   (progn
-     (let* ((headers '("Content-Type: text/html", "\r\n"))
-            (body "Why Hello there !"))
-     (barista:response 200 headers body)))))
+        (defroutes
+         ('POST #"/chapter1-clicked"
+                 (progn
+                   (barista-response:ok "&lt;b&gt;Hello from Lisp Flavored erlang &lt;/b&gl;"))))
       </pre>
 
-      <p class="py-5 text-9xl">
-        In our example, we want to handle the HTTP POST verb, and return a HTML fragment.
-        The "method" is an erlang atom 'GET 'POST etc.
-        The "path" pattern is a binary list #"chapter1" #"nextpath", which doesnt include the "/" path
-        separators.
+      <p>
+        In our example, we want to handle the HTTP POST verb, and return a HTML fragment.<br>
+        The "method" is an erlang atom 'GET 'POST etc.<br>
+        The "path" pattern is a binary list #"chapter1-clicked".  <br>
+        Lanes creates some additional functionality, that we will get into later.
       </p>
 
-      <p class="py-5">
-        Lets add a handler specifically for the "/chapter1-clicked"
-      </p>
+      <p>
+        Keen readers who wonder how you add multiple routes to a single application can use the power
+        of Lisp Flavored Erlangs pattern matching in function headers.  This is discussed in
+        the <a href="http://docs.lfe.io/current/user-guide/diving/5.html"> LFE user guide section 2.5.3.3</a>.
+</p>
 
-      <pre>
-;; previous matches removed here.
-  (('POST (list (binary (&quot;chapter1-clicked&quot;)) )(= `#m(body ,body) req))
-   (progn
-     (let* ((headers (generate-headers))
-            (body (list (binary &quot;&lt;b&gt; This is just a html fragment &lt;/b&gt;&quot;))))
-       (lfe_io:format &quot;headers: ~p~n&quot; `(,headers))
-       (barista:response 200 headers body))))
-    </pre>
-
-      <p class="py-5">
-        For the full example check out the source in the demo repo <a href="https://github.com/spawnfest/UntitledProject"> here. </a>
-      </p>
-      <p class="py-5 text-9xl">
+<p class="py-5 text-9xl">
        <a href="/chapter1" hx-boost="true">← Previous Chapter</a> || <a href="/chapter2" hx-boost="true">Next Chapter →</a>
       </p>
 </div>
