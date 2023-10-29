@@ -56,25 +56,24 @@ TBD
 
 [~] Create a tutorial of basic HTMX used with LFE.
 
-[x] Provide a simple working LFE web server that serves html.
+☑ Provide a simple working LFE web server that serves html.
 
-[x] Provide an example of serving htmx from LFE.
+☑ Provide an example of serving htmx from LFE.
 
-[x] Add github actions for quick test results.
+☑  Add github actions for quick test results.
 
-[ ] Add github action to create container
-
-    [ ] Update instructions on how to run container.
+☐ Add github action to create container
+ ☐ Update instructions on how to run container.
 
 [ ] Create a playground which serves up simple editable html page and a lfe handler.
 
 Post Spawnfest
 
-[ ] Provide advanced examples of per user processes linked to a single page (advanced, probably after spawnfest).
+☐ Provide advanced examples of per user processes linked to a single page (advanced, probably after spawnfest).
 
-[ ] Create "export" of custom sandbox function for use in users project.
+☐ Create "export" of custom sandbox function for use in users project.
 
-[ ] Implement the "debug" HTMX extension.
+☐ Implement the "debug" HTMX extension.
 
 ## License [&#x219F;](#table-of-contents)
 
