@@ -54,6 +54,11 @@ Flavored Erlang provides alien technology to Erlang raising the bar once again.
 This verion of TBWLE (Untitled Project) intends to demonstrate HTMX and LFE, I will continue to feed my learning
 back into this project as I learn new skills.
 
+## Submitting bugs [&#x219F;](#table-of-contents)
+
+This project accepts bugs and features using github issues, you can lodge one <a href="https://github.com/spawnfest/UntitledProject/issues"> here </a>
+
+Bugs and features will be fixed when I can.  Pull Requests, are also accepted it will make my life a lot easier.
 
 ## Build [&#x219F;](#table-of-contents)
 
@@ -80,13 +85,13 @@ TBD
 
 ## Roadmap [&#x219F;](#roadmap)
 
-[~] Create a tutorial of basic HTMX used with LFE.
+☐ Create a tutorial of basic HTMX used with LFE.
 
 ☑ Provide a simple working LFE web server that serves html.
 
 ☑ Provide an example of serving htmx from LFE.
 
-☑  Add github actions for quick test results.
+☑ - Add github actions for quick test results.
 
 ☐ Add github action to create container
 
@@ -96,11 +101,19 @@ TBD
 
 Post Spawnfest
 
+☐ Implement all examples on the <a hre="https://htmx.org/examples/"> HTMX.org examples </a> page.
+
+☐ Implement examples of routing specific htmx features to gen-server processes.
+
+☐ Demonstrate emacs workflow at repl.
+
 ☐ Provide advanced examples of per user processes linked to a single page (advanced, probably after spawnfest).
 
 ☐ Create "export" of custom sandbox function for use in users project.
 
 ☐ Implement the "debug" HTMX extension.
+
+
 
 ## License [&#x219F;](#table-of-contents)
 
