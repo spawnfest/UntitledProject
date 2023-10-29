@@ -84,7 +84,7 @@ Copyright © 2023, Wade Mealing <wmealing@gmail.com>.
 
 <!-- Named page links below: /-->
 
-[logo]: https://avatars1.githubusercontent.com/u/3434967?s=250
+[logo]: https://github.com/spawnfest/UntitledProject/blob/main/priv/images/lazer-bison.jpeg
 [logo-large]: https://github.com/spawnfest/UntitledProject/blob/main/priv/images/lazer-bison.jpeg
 [github]: https://github.com/spawnfest/UntitledProject
 [gh-actions-badge]: https://github.com/spawnfest/UntitledProject/workflows/build/badge.svg
