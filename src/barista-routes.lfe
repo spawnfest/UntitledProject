@@ -27,6 +27,21 @@
          (logger:debug "This is getting old, why doesnt this match ")
          (barista-response:ok (erlang:binary_to_list (template:load "index.html")))))
 
+ ('GET #"/chapter1"
+       (progn
+         (logger:info "This is getting old, why doesnt this match ")
+         (barista-response:ok (erlang:binary_to_list (template:load "chapter1.html")))))
+
+ ('POST #"/chapter1-clicked"
+        (progn
+          (logger:emergency "This is an emergency!")
+          (barista-response:ok "<b> Hello from Lisp Flavored erlang </b>")))
+
+ ('GET #"/chapter2"
+       (progn
+         (logger:info "I kinda expected this to appear")
+         (barista-response:ok (erlang:binary_to_list (template:load "chapter1.html")))))
+
  ;; single order operations
  ('POST #"/order"
         (progn
