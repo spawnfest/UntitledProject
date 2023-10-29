@@ -24,6 +24,14 @@
          (lfe_io:format "headers: ~p~n" `(,headers))
          (barista:response 200 headers body))))
 
+  (('GET (list (binary ("chapter2")))  (= `#m(body ,body) req))
+   (progn
+     (lfe_io:format "Serving up get on chapter 2~n" '())
+     (let* ((headers (generate-headers))
+            (body (list (template:load "chapter2.html"))))
+       (lfe_io:format "headers: ~p~n" `(,headers))
+       (barista:response 200 headers body))))
+
   (('POST (list (binary ("chapter1-clicked")) )(= `#m(body ,body) req))
    (progn
      (let* ((headers (generate-headers))
