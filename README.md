@@ -21,7 +21,7 @@
 
 ## About [&#x219F;](#table-of-contents)
 
-🚀 HTMX is not just another web development library; it's pure web development magic! Think of it as your secret potion to create dynamic, interactive, and fast web applications with minimal effort.   No "React" in sight, no frameworks.  We bring the "Hype" back into Hyper Text Markup Language.
+🚀 HTMX is not just another web development library; it's pure web development magic! Think of it as your secret potion to create dynamic, interactive, and fast web applications with minimal effort.   No "React" in sight, no frameworks.  We bring the "Hype" back into Hyper Text Markup Language.  When you couple HTMXs magic with the unstoppable terminator mindset of BEAM supervised processes, industrial grade magic is within reach.
 
 The Untitled Project is basically a learning tool.  Its an interactive experience that demonstrates the
 unstopable power of using Lisp Flavored Erlang on the backend and HTMX on the front.
