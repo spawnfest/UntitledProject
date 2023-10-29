@@ -58,7 +58,7 @@ back into this project as I learn new skills.
 
 This project accepts bugs and features using github issues, you can lodge one <a href="https://github.com/spawnfest/UntitledProject/issues"> here </a>
 
-Bugs and features will be fixed when I can.  Pull Requests, are also accepted it will make my life a lot easier.
+Bugs and features will be fixed when I can.  Pull Requests, are also it accepted will make my life a lot easier.
 
 ## Build [&#x219F;](#table-of-contents)
 
@@ -80,7 +80,9 @@ $ rebar3 as test lfe test
 
 ## Usage [&#x219F;](#table-of-contents)
 
-TBD
+```shell
+$ rebar3 lfe run
+```
 
 
 ## Roadmap [&#x219F;](#roadmap)
