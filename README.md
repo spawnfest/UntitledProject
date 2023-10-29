@@ -98,7 +98,6 @@ Visit http://localhost:8888 in your browser.
 
 ☑ Create a tutorial of basic HTMX used with LFE.
 
-
 ☑ Provide a simple working LFE web server that serves html.
 
 ☑ Provide an example of serving htmx from LFE.
@@ -109,13 +108,15 @@ Visit http://localhost:8888 in your browser.
 
 ☑ Add github action to create container
 
-☐ Publish a container.
+☑ Create a playground which serves up simple editable html page and a lfe handler.
 
-☐ Update instructions on how to run container. 
-
-☐ Create a playground which serves up simple editable html page and a lfe handler.
 
 Post Spawnfest
+
+
+☐ Publish a container.
+
+☐ Update instructions on how to run container.
 
 ☐ Implement all examples on the <a hre="https://htmx.org/examples/"> HTMX.org examples </a> page.
 
