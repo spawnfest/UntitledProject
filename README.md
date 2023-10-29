@@ -67,6 +67,7 @@ actions are configured on this repostiory, when cloning this repo, please make s
 ## Build [&#x219F;](#table-of-contents)
 
 ```shell
+$ rebar3 compile
 $ rebar3 lfe compile
 ```
 
@@ -74,42 +75,43 @@ $ rebar3 lfe compile
 
 ```shell
 $ rebar3 lfe repl
-lfe>  (untitled_project:start)
+lfe> (untitled_project:start)
 ```
+
+Open http://localhost:8888 in your web browser and begin reading.
 
 # Tests [&#x219F;](#table-of-contents)
 
 ```shell
-$ rebar3 as test lfe test
+$ rebar3 lfe test
 ```
 
 ## Usage [&#x219F;](#table-of-contents)
-
 
 ```shell
 $ rebar3 lfe run
 ```
 
-```shell
-$ podman load --input image.tar
-$ podman run whatever
-```
+Visit http://localhost:8888 in your browser.
 
 ## Roadmap [&#x219F;](#roadmap)
 
-☐ Create a tutorial of basic HTMX used with LFE.
+☑ Create a tutorial of basic HTMX used with LFE.
+
 
 ☑ Provide a simple working LFE web server that serves html.
 
 ☑ Provide an example of serving htmx from LFE.
 
-☐ Use Lanes as the router (less hassle than current)
+☑ Use Lanes as the router (less hassle than current)
 
 ☑ - Add github actions for quick test results.
 
-☐ Add github action to create container
+☑ Add github action to create container
 
-☐ Update instructions on how to run container.
+☐ Publish a container.
+
+☐ Update instructions on how to run container. 
 
 ☐ Create a playground which serves up simple editable html page and a lfe handler.
 
@@ -125,7 +127,7 @@ Post Spawnfest
 
 ☐ Create "export" of custom sandbox function for use in users project.
 
-☐ Implement the "debug" HTMX extension.
+☐ Implement the "debug" HTMX extension on all pages.
 
 
 
