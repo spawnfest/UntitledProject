@@ -63,6 +63,7 @@ TBD
 ☑  Add github actions for quick test results.
 
 ☐ Add github action to create container
+
  ☐ Update instructions on how to run container.
 
 ☐ Create a playground which serves up simple editable html page and a lfe handler.
@@ -90,7 +91,7 @@ Copyright © 2023, Wade Mealing <wmealing@gmail.com>.
 [gh-actions]: https://github.com/spawnfest/UntitledProject/actions?query=workflow%3Abuild+
 [lfe]: https://github.com/lfe/lfe
 [lfe badge]: https://img.shields.io/badge/lfe-2.1-blue.svg
-[erlang badge]: https://img.shields.io/badge/erlang-19%20to%2025-blue.svg
+[erlang badge]: https://img.shields.io/badge/erlang-26-blue.svg
 [version]: https://github.com/spawnfest/UntitledProject/blob/master/.github/workflows/cicd.yml
 [github tags]: https://github.com/spawnfest/UntitledProject/tags
 [github tags badge]: https://img.shields.io/github/tag/spawnfest/untitled-project.svg
