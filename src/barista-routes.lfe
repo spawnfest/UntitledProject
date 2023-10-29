@@ -23,10 +23,9 @@
 (defun write-to-file (filename data)
   (file:write_file filename data ))
 
-
 ;;compile a file
 (defun compile-file (filename)
-  (: lfe-shell c filename))
+  (: lfe_comp file filename))
 
 ;; compile it.
 (defun compile-data (data)
@@ -86,14 +85,19 @@
 
  ('PUT #"/live-demo/user-lfe"
        (progn
-         (compile-data (barista-request:get-data req))
+         ;;         (logger:alert (barista-request:get-data req))
+         (logger:alert (maps:get "user-lfe" (barista-request:get-data req)))
+         (write-to-file "/tmp/user-demo.lfe" (maps:get "user-lfe" (barista-request:get-data req)))
+         (compile-file "/tmp/user-demo.lfe")
          (barista-response:ok (erlang:binary_to_list (template:load "template-lfe.html")))))
 
  ('GET #"/live-demo"
        (progn
          (barista-response:ok (erlang:binary_to_list (template:load "live.html")))))
 
-
+ ('GET #"/go"
+       (progn
+         (barista-response:ok (erlang:binary_to_list (template:load "user/live.html")))))
 
  ('GET #"/about"
        (progn
