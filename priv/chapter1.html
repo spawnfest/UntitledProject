@@ -79,9 +79,8 @@
         The method of including the latest version at the time of writing is:
       </p>
 
-      <p class="py-5">
-	   &lt;script src=&quot;https://unpkg.com/htmx.org@1.9.6&quot;&gt;&lt;/script&gt;
-      </p>
+      <pre>
+	   &lt;script src=&quot;https://unpkg.com/htmx.org@1.9.6&quot;&gt;&lt;/script&gt;</pre>
 
       <p>
         Adding the HTMX library creates actions based on the specific attributes of HTML tags,
@@ -105,16 +104,12 @@
         HTMX specifies behavior by adding attributes on any HTML element.  Check this out:
       </p>
 
-      <br>
-      
-      <div class="py-5">
-         &lt;button hx-post=&quot;/clicked&quot; hx-swap=&quot;outerHTML&quot;&gt;<br>
-         Click Me <br>
-         &lt;/button&gt;<br>
-      </div>
+      <pre>
+ &lt;button hx-post=&quot;/clicked&quot; hx-swap=&quot;outerHTML&quot;&gt;
+         Click Me
+ &lt;/button&gt;</pre>
 
-      <p class="py-5">
-        
+      <p>
         The hx-post and hx-swap attributes on this button tell htmx:
         <br>
         “When a user clicks on this button, issue an AJAX request to /clicked, and replace
@@ -125,7 +120,7 @@
         So much power in so little code. I've got this example hooked up right here:
       </p>
 
-      <div class="py-5">
+      <div>
           <button hx-post="/chapter1-clicked" hx-swap="outerHTML" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Click Me
           </button>
