@@ -21,7 +21,7 @@ jobs:
     - name: Check rebar3 Version
       run: DEBUG=1 rebar3 --version
     - name: Compile
-      run: rebar3 lfe compile
+      run:  rebar3 do compile, lfe compile
    
     - name: Run Tests
       run:  rebar3 lfe ltest -tall 
