@@ -21,7 +21,7 @@
       button {
           background-color: #f9bc60;
           color: #001e1d;
-          border-radius: 9999px;
+          border-radius: 24px;
           width: 10rem;
           height: 4rem;
           font-size: 1rem; /* 16px */
@@ -42,6 +42,18 @@
           padding: 10px;
       }
 
+      table, th, td {
+          border-left: 40px;
+          padding: 5px;
+          border: 1px solid white;
+      }
+
+
+      div.reallybig {
+          font-size: 126px;
+          color: rgb(255,255,102);
+      }
+
     </style>
 
 </head>
@@ -50,29 +62,39 @@
     <h1 class="text-black-600 text-5xl font-bold">
       Tank Bison with lazer eyes.
     </h1>
-    <b>Why backend is the new frontend.</b>
+    <b>Intended Audience</b>
 
-    <div class="py-5">
+    <div class="">
 
-      <p class="py-5">
+      <p>
+        This tutorial expects you to have basic understanding of:
+
+        <ul>
+          <li>HTML</li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">http verbs</a></li>
+          <li> Novice understand of <a href="https://cnbbooks.github.io/lfe-manual/current/part1/intro/index.html"> Lisp Flavored Erlang </a>)</li>
+          <li> A sense of humour </li>
+        </ul>
+      </p>
+
+      <b>What is HTMX ?</b>
+      <p>
       HTMX gives you access to create dynamic applications without having to learn all the nastyness
       and complication that comes with modern javascript.  Couple this with the BEAM alien technology
       of Lisp Flavored erlang, and you have a combinion that can't be stopped.
       </p>
 
+      <b>Before you begin this journey..</b>
+
       <p>
-        This tutorial expects you to have basic understanding of HTML, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"> http verbse </a> and have have equivalent understanding of a LFE novice (something like <a href="https://cnbbooks.github.io/lfe-manual/current/part1/intro/index.html"> this </a>)
-      </p>
-
-
-      <p class="py-5">
         Before you dive down this rabbit hole, I start with a quote from Morpheus:
-      </p>
 
-      <div class="pl-10 underline decoration-pink-500 py-5">
+      <p>
           You have to understand. Most people are not ready to be unplugged. And many of them are so inured and
           so hopelessly dependent on the system that they will fight to protect it.
-      </div>
+      </p>
+
+      </p>
 
       <p class="py-5">
         Individuals can become defensive when a new technology obsoletes or challenges a thought where they have invested time money or energy. There is a natural resistance to change, people are comfortable with what they know. Fear of the unknown can make individuals defensive, overwhelmed or uncertain. Investing significant time, money, or effort into  technology can make them defensive and reluctance to embrace the advantages of the new, despite its potential benefits.
@@ -83,15 +105,49 @@
         this library is, and how so much can be done without writing javascript.
       </p>
 
-      <b>Whats the big deal ?</b>
+      <b>What's the big deal ?</b>
 
       <p class="py-5">
-      When your browser talks to to a web server, it uses one of "HTTP" verbs,
-      (GET PUT POST PATCH DELETE, ETC).  The HTML standard (even HTML 5) limits the browser
-      to JSON being allowed to make these requests.
+      When your browser talks to to a web server, it uses one of several "HTTP" verbs,
+      (GET PUT POST PATCH DELETE, ETC).  The HTML standard (even HTML 5) has no way of allowing hypertext
+      to make these basic types of requests.
       <p>
 
-      <p class="py-5">
+      <p>
+        I've listed below 4 of the most common types, which you can roughly map to basic operations in a database.
+      </p>
+
+      <p>
+        <table class="offset">
+          <tr>
+            <th>HTTP Verb</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.</td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server.</td>
+          </tr>
+
+          <tr>
+            <td>PUT</td>
+            <td>
+              The PUT method replaces all current representations of the target resource with the request payload
+              </td>
+          </tr>
+
+          <tr>
+            <td>DELETE</td>
+            <td>The DELETE method deletes the specified resource.</td>
+          </tr>
+
+        </table>
+      </p>
+
+      <p>
       When you think about it, there isnt a good reason for HTML to not support these extended verbs,
 
       We the people say NO MORE ! We want the these verbs to be used by the hypermedia itself,
@@ -107,29 +163,30 @@
 
       <div class="py-5">
 
-        <b class="py-5">Motiviation</b>
+        <b class="py-5">Motivation</b>
 
         <ol class="py-5 list-disc">
-          <li>Why should only a and form be able to make HTTP requests?</li>
-          <li>Why should only click & submit events trigger them?</li>
-          <li>Why should only GET & POST methods be available?</li>
-          <li>Why should you only be able to replace the entire screen?</li>
+          <li>Why should only &lt;a&gt; and &lt;form&gt; be able to make HTTP requests?</li>
+          <li>Why should only <b>click</b> & <b>submit</b> events trigger them?</li>
+          <li>Why should only <b>GET</b> & <b>POST</b> methods be available?</li>
+          <li>Why should you only be able to replace the entire screen? when fetching html ?</li>
         </ol>
       </div>
 
-      <p class="py-5">
-      By removing these arbitrary constraints, htmx completes HTML as hypertext.
+      <p>
+      By removing these arbitrary constraints, HTMX significantly increases hypertext's potential.
       </p>
 
-      <p class="py-5">
+      <p>
       Why does this matter ? Because almost all of the actions you want to do from the
       web client to the server are http verbs, previous locked up behind javascript and json.
       </p>
 
+      <b> Seeing HTMX in action </b>
       <p>
-        If you fire up your web browsers "Developer tools", we can see how this is immediately
-        useful.  The the link to the next chapter below is clicked, it will not do a full page refresh.
-        Instead the contents will be inserted into the page without a full refresh.  Give it a go.
+        For an immediate demonstration of HTMX in action, fire up your web browser's "Developer tools",
+        and change to the "network tab".  When the link to the next chapter below is clicked, it will not
+        do a full page refresh, instead the contents will be inserted into the page.  Give it a go now.
       </p>
 
       <p class="py-5 text-9xl">

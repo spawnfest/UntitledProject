@@ -34,6 +34,13 @@
           padding-left: 1.25rem; /* 20px */
           padding-right: 1.25rem; /* 20px */
       }
+
+      div.reallybig {
+          font-size: 126px;
+          color: rgb(255,255,102);
+      }
+
+
     </style>
 </head>
 
@@ -53,7 +60,7 @@
       </p>
 
       <p>
-        Here is the method of including the latest version at the time of writing.
+        The method of including the latest version at the time of writing is:
       </p>
 
       <p class="py-5">
@@ -61,8 +68,8 @@
       </p>
 
       <p>
-        Adding the htmx library creates actions based on the specific attributes of HTML tags,
-        its pretty neat.
+        Adding the HTMX library creates actions based on the specific attributes of HTML tags,
+        it's pretty neat.
       </p>
 
       <b>The simplest example.</b>
@@ -74,12 +81,12 @@
 
       <p>
         In this minimal example, we will demonstrate how to use LFE/HTMX with the humble &lt;button&gt; element.
+      <p>
 
       <p>
-      <p>
-        In the 'common' use scenario, button clicks trigger a javascript event.
+        Usually a button click triggers a javascript event.
 
-        HTMX reduces this complexity to elements on any html element.  Check this out:
+        HTMX specifies behavior by adding attributes on any HTML element.  Check this out:
       </p>
 
       <br>
@@ -115,9 +122,7 @@
       <b>The "Back end"</b>
 
       <p class="py-5">
-        Of course this needs some server-side backend code to work correctly,  You'd need to
-        run a simple web server that suits your needs.  If you check out the code for this project, you will
-        see that it is using "barista" with "lanes", a neat little HTTP server and routing utility.
+        This needs some server-side backend code to work correctly,  I use <a href="https://github.com/lfe-http/barista">Barista</a> (as a web server) with <a href="https://github.com/lfe-http/lanes">lanes</a>  (a routing library) to get started.
       <p>
 
       <p>
@@ -127,14 +132,14 @@
       </p>
 
       <p>
-        The main guts of Barista's work is done via a a <a href="https://github.com/lfe-http/barista/tree/main#creating-custom-modules-"> Custom module </a>.   We're going to create a custom module that hands routing off to "lanes"
-        to make things just that little bit easier to understand.
+        Barista's is an LFE wrapper around erlangs built-in HTTP server, the Barista server implements serving requests the same way as the built in server, by using a <a href="https://github.com/lfe-http/barista/tree/main#creating-custom-modules-"> custom module </a>.   We're going to create a custom module using lanes' "defroutes" macro to make the routes easier to understand.
       </p>
 
       <p>
-        In the example below, we're going to put all the functions below into a single function and
-        uses the "defroutes" macro supplied by the lanes library.  We're going to start here by defining a
-        single route that the app will use when the button is clicked on.
+        In the example below, we're going to put all the routes into a single function and
+        use the "defroutes" macro supplied by the lanes library.  Start by defining a
+        single route that the app will use when the button is clicked on.  Additional routes
+        can be added later.
       </p>
 
       <br>
@@ -148,9 +153,13 @@
 
       <p>
         In our example, we want to handle the HTTP POST verb, and return a HTML fragment.<br>
-        The "method" is an erlang atom 'GET 'POST etc.<br>
-        The "path" pattern is a binary list #"chapter1-clicked".  <br>
-        Lanes creates some additional functionality, that we will get into later.
+        <ul>
+          <li>The "method" is an erlang atom 'GET 'POST etc, - 'POST in this example</li>
+          <li>The "path" pattern is a binary list  -  #"chapter1-clicked"</li>
+          <li>Return the resulting of the <a href="https://github.com/lfe-http/barista/blob/main/src/barista-response.lfe">barista-response</a> funtion</li>
+        </ul>
+        Lanes creates some additional functionality in the path string, that will be demonstrated later.</li>
+        </ul>
       </p>
 
       <p>

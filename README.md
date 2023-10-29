@@ -21,25 +21,26 @@
 
 ## About [&#x219F;](#table-of-contents)
 
-This project was created as a spawnfest entry, if you are a judge, you may want to look at the <a href="./spawnfest-manifest.md">spawnfest-manifest</a> which outlines about the project and its boundaries.
-
-🚀 HTMX is not just another web development library; it's pure web development magic! Think of it as your secret potion to create dynamic, interactive, and fast web applications with minimal effort.   No "React" in sight, no frameworks.  We bring the "Hype" back into Hyper Text Markup Language.  When you couple HTMXs magic with the unstoppable terminator mindset of BEAM supervised processes, industrial grade magic is within reach.
-
 The Untitled Project is basically a learning tool.  Its an interactive experience that demonstrates the
 unstopable power of using Lisp Flavored Erlang on the backend and HTMX on the front.
 
+
 Each micro lesson provides both backend and frontend code for the reader to observe and interact with while
 not having to setup the full stack in a safe and controlled environment.
+
+This project was created as a spawnfest entry, if you are a judge, you may want to look at the <a href="./spawnfest-manifest.md">spawnfest-manifest</a> which outlines about the project and its boundaries.
 
 ## Rationale [&#x219F;](#table-of-contents)
 
 
 ### Why HTMX ?
-Matt.sh talks about <a href="https://matt.sh/htmx-is-a-erlang"> HTMX being an erlang </a>, While there is
-more to erlang than self-upgrading its still very cool.
 
-HTMX puts development of Single Page Applications (SPA, apparently web pages are apps).  It appears to do
-most of the common webappy stuff with markup instead of writing oodles of javascript.
+
+🚀 HTMX is not just another web development library; it's pure web development magic! Think of it as your secret potion to create dynamic, interactive, and fast web applications with minimal effort.   No "React" in sight, no frameworks.  We bring the "Hype" back into Hyper Text Markup Language.  When you couple HTMXs magic with the unstoppable terminator mindset of BEAM supervised processes, industrial grade magic is within reach.
+
+
+HTMX simplifies the development of Single Page Applications (SPA, apparently web pages are apps).  It does most of 
+the common webappy stuff with markup instead of writing oodles of javascript.
 
 
 ### Why Lisp Flavored Erlang
@@ -51,14 +52,17 @@ both into production.
 Erlang is the T-800 terminator of programming languages, when its hit or crashes it just gets right back up.  Lisp
 Flavored Erlang provides alien technology to Erlang raising the bar once again.
 
-This verion of TBWLE (Untitled Project) intends to demonstrate HTMX and LFE, I will continue to feed my learning
+This version of TBWLE (Untitled Project) intends to demonstrate HTMX and LFE, I will continue to feed my learning
 back into this project as I learn new skills.
+
+It would be great if people could also contribute to this project to foster a learning community around LFE and HTMX.
 
 ## Submitting bugs [&#x219F;](#table-of-contents)
 
 This project accepts bugs and features using github issues, you can lodge one <a href="https://github.com/spawnfest/UntitledProject/issues"> here </a>
 
-Bugs and features will be fixed when I can.  Pull Requests, are also it accepted will make my life a lot easier.
+Bugs and features will be fixed when I can.  Pull Requests, are also it accepted will make my life a lot easier. Github
+actions are configured on this repostiory, when cloning this repo, please make sure that the current tests pass.
 
 ## Build [&#x219F;](#table-of-contents)
 
@@ -70,6 +74,7 @@ $ rebar3 lfe compile
 
 ```shell
 $ rebar3 lfe repl
+lfe>  (untitled_project:start))
 ```
 
 # Tests [&#x219F;](#table-of-contents)

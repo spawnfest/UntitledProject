@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+  <style>
+    html {
+        max-width: 80ch;
+        padding: 3em 1em;
+        margin: auto;
+        line-height: 1.75;
+        font-size: 1.25em;
+        background-color: rgb( 0 70 67);
+        color: rgb(171 209 198);
+        font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        line-height: 1.5;
+    }
+
+    button {
+        background-color: #f9bc60;
+        color: #001e1d;
+        border-radius: 44px;
+        width: 10rem;
+        height: 4rem;
+        font-size: 1rem; /* 16px */
+        padding: 20px;
+    }
+
+    a {
+        color: #FFFFFF;
+    }
+
+    p {
+        padding-left: 1.25rem; /* 20px */
+        padding-right: 1.25rem; /* 20px */
+        padding-top: 1.25rem;
+    }
+
+    div {
+        padding-left: 1.25rem; /* 20px */
+        padding-right: 1.25rem; /* 20px */
+        padding-top: 1.25rem; /* 20px */
+    }
+
+    pre {
+        background-color: #BDB76B;
+        color: #001e1d;
+    }
+
+    /* Do this because otherwise i can't see the highlighting */
+    pre::selection {
+        /* Change highlight background color to black */
+        background: #000;
+        /* Change highlight text color to red */
+        color: #ff0000;
+    }
+
+  </style>
+
+<body>
+    <h1>
+      A "Click to edit"  Example.
+    </h1>
+
+    <b>Setting up your HTML - Click to Edit Example</b>
+
+    <p>
+      We're going to increase the voltage, amp up the functionality with the 'click to edit pattern'.
+      This provides a way to offer inline editing of all or part of a record without a full page refresh.
+      This fits in beautifully with the htmx mindset.
+    </p>
+
+    <p>
+      We borrow the example from the HTMX site (with permission! thank you <a href="https://x.com/htmx_org?">@htmx.org</a>)
+    </p>
+
+    <p>
+      <b> The presentation and input layer (AKA HTML)</b>
+    </p>
+
+    <pre>
+
+    &lt;div hx-target=&quot;this&quot; hx-swap=&quot;outerHTML&quot;&gt;
+      &lt;div&gt;&lt;label&gt;First Name&lt;/label&gt;: Joe&lt;/div&gt;
+      &lt;div&gt;&lt;label&gt;Last Name&lt;/label&gt;: Armstrong&lt;/div&gt;
+      &lt;div&gt;&lt;label&gt;Email&lt;/label&gt;: joe@erlang-solutions.com&lt;/div&gt;
+      &lt;button hx-get=&quot;/contact/1/edit&quot; class=&quot;btn btn-primary&quot;&gt;
+      Click To Edit
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    </pre>
+
+    <p>
+      When the button is clicked it will make a "GET" request, to /contact/1/edit which returns
+      a HTML fragment, and replaces this "div" tag with the fetched content.  The current CSS styling is
+      applied directly.  There is no <a href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content">flash of unstyled content</a> and the button disappears with the content in its place.
+    </p>
+
+    <p>
+      Here is the fragment of HTML returned on the 'click' event:
+    </p>
+
+    <pre>
+&lt;form hx-put=&quot;/contact/1&quot; hx-target=&quot;this&quot; hx-swap=&quot;outerHTML&quot;&gt;
+  &lt;div&gt;
+    &lt;label&gt;First Name&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;firstName&quot; value=&quot;Joe&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label&gt;Last Name&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;lastName&quot; value=&quot;Armstrong&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-group&quot;&gt;
+    &lt;label&gt;Email Address&lt;/label&gt;
+    &lt;input type=&quot;email&quot; name=&quot;email&quot; value=&quot;joe@blow.com&quot;&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;btn&quot;&gt;Submit&lt;/button&gt;
+  &lt;button class=&quot;btn&quot; hx-get=&quot;/contact/1&quot;&gt;Cancel&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+
+    <p>
+      This new fragment replaces the previous &lt;div&gt; with what looks to be a normal
+      HTML form, with some minor differences.  This form tag has an additional 'hx-put' attribute,
+      one of those verbs that were previously off-limits to normal HTML. By using the PUT verb,
+      the request can map nicely to the backend handler to "UPDATE" the resource (in this case, a contact).
+    </p>
+
+    <p>
+      As a reminder, The verbs map to specific functionality. Using these conventions makes it easier
+      to understand the authors intent.
+    </p>
+
+    <ul>
+        <li>GET verb is used to fetch a resource for viewing</li>
+        <li>POST verb is used to create a resource</li>
+        <li>PUT verb is used to update a resource</li>
+        <li>DELETE verb is used to delete a resource</li>
+    </ul>
+
+    <p>
+      There are other verbs, you can learn about them on your own time and decide when best to use them.
+    </p>
+
+    <p>
+      Because we are editing an existing contact, we use the HTTP PUT verb to update the existing
+      contact.  Mozilla's <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT">thoughts</a>
+      on the method suggest we shouldn't be using it for from elements, let them try and stop us !
+    </p>
+
+    <b> Interactive Example </b>
+
+    <div hx-target="this" hx-swap="outerHTML">
+      <div><label>First Name</label>: Joe</div>
+      <div><label>Last Name</label>: Armstrong</div>
+      <div><label>Email</label>: joe@blow.com</div>
+
+      <button hx-get="/chapter2/contact/1/edit">
+      Click To Edit
+      </button>
+    </div>
+
+    <b>When the "Click to Edit" button is used: </b>
+    <ul>
+      <li> The pre-filled html fragment is fetched from the server, and rendered by the browser.  The state is provided by the server.</li>
+      <li> The new form has textfields for entry, and allows the end user to modify the form data. </li>
+    </ul>
+
+    <b>When the submit button is clicked: </b>
+    <ul>
+      <li> A "PUT" to the webserver, including all the data from the elements in the &lt;form&gt; tag.</li>
+      <li> The server validates the data, and can send back validation information in html, or return the new state of the object.</li>
+    </ul>
+
+    <p>
+      Here is the lanes route handler for both features:
+    </p>
+
+    <pre>
+(defroutes
+
+;; previous routes above here...
+
+('GET #"/chapter2/contact/:id/edit"
+       (progn
+         (barista-response:ok (erlang:binary_to_list (template:load "chapter2-edit.html")))))
+
+('PUT #"/chapter2/contact/:id"
+       (progn
+         (validate id (barista-request:get-data req))
+         (barista-response:ok (erlang:binary_to_list (template:load "chapter2-update.html")))))
+    </pre>
+
+    <b> The 'GET verb: </b>
+      <p>
+      In the interest of simplicity, this has been simplified to load a pre-filled HTML form.
+      Usually this would be loaded from a database, and the database information applied to the
+      an empty form.  In the interest of brevity, this has been left as an exercise for the reader.
+      </p>
+
+   <b> The 'PUT verb </b>
+    <p>
+      This is matched when the client makes a "PUT" request. Instead of directly returning the page,
+      the validate function will check the request data to ensure that the content can be updated.
+    </p>
+
+    <p>
+      This example validation function will always deny being able to update Joe's information,
+      however in normal deployment this would be written to a database once validated.
+    </p>
+
+    <b> Creating validate function </b>
+
+    <p>
+      Form validation is NOT a solved problem,  Calling the <a href="https://github.com/erlangbureau/liver">liver</a> library looks to be one of the easier options.    In our example, we're going to do a check which will always fail, and then redirect to a validation error.
+    </p>
+
+    
+<pre>
+      (defun validate (id map)
+
+      if (string:equals (get-map map 'firstname) "joe")
+      "You cant edit joe, sorry.."
+      )
+</pre>
+    
+</body>
+</html>
