@@ -3,7 +3,6 @@ FROM erlang:26
 RUN mkdir -p /workdir
 
 COPY . /workdir
-workdir
 
 WORKDIR /workdir
 
