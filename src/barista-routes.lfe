@@ -49,6 +49,10 @@
        (progn
          (validate id (barista-request:get-data req))))
 
+ ('GET #"/chapter2/contact/:id"
+       (progn
+         (barista-response:ok (erlang:binary_to_list (template:load "chapter2-default.html")))))
+ 
  ('GET #"/chapter2"
        (progn
          (barista-response:ok (erlang:binary_to_list (template:load "chapter2.html")))))
