@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+  <head>
+  <meta charset="UTF-8">
+   <script src="https://unpkg.com/htmx.org@1.9.6"></script>
   <style>
     html {
         max-width: 80ch;
@@ -59,7 +61,7 @@
     }   
 
   </style>
-
+  </head>
 <body>
     <h1>
       A "Click to edit"  Example.
@@ -225,6 +227,16 @@
   (if (== 1 1)
       (barista-response:ok (erlang:binary_to_list (template:load "chapter2-error.html")))))
 </pre>
+
+  <p>
+    Because 1 is always equal to 1, this will always fail, the template will always redirect to
+    showing the error condition.
+  </p>
+
+  <p>
+       <a href="/chapter1" hx-boost="true">← Previous Chapter</a> || <a href="/live-demo" hx-boost="true">Next Chapter →</a>
+</p>
+
 
 
 </body>
