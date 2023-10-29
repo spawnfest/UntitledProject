@@ -17,14 +17,19 @@ I have not written a web application before, (I'm a C programmer by trade) this 
 
 I have more written in the security context about XSS that is unable to be included.
 
-
 Running the project:
 
-  - If i get time, you can just run the container and visit http://containerip:8888
-  - If you dont, i think you can git checkout the code.
-  - rebar3 lfe run
+ - Check out the code:
+	git clone https://github.com/spawnfest/UntitledProject.git
+ - Build it:
+	rebar3 do compile, lfe compile
+ - Run it:
+	rebar3 lfe run
 
+Note:
+  - No AI was used in the making of this project. 
+  - Github actions run tests ! 
+  - Github actions builds (but doesn't publish) a container, thats on my list.
 
-No AI was used in the making of this project. 
 
 
