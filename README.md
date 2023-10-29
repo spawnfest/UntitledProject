@@ -24,9 +24,8 @@
 The Untitled Project is basically a learning tool.  Its an interactive experience that demonstrates the
 unstopable power of using Lisp Flavored Erlang on the backend and HTMX on the front.
 
-
 Each micro lesson provides both backend and frontend code for the reader to observe and interact with while
-not having to setup the full stack in a safe and controlled environment.
+not having to setup the full stack in a safe and controlled environment. 
 
 This project was created as a spawnfest entry, if you are a judge, you may want to look at the <a href="./spawnfest-manifest.md">spawnfest-manifest</a> which outlines about the project and its boundaries.
 
@@ -61,10 +60,11 @@ It would be great if people could also contribute to this project to foster a le
 
 This project accepts bugs and features using github issues, you can lodge one <a href="https://github.com/spawnfest/UntitledProject/issues"> here </a>
 
-Bugs and features will be fixed when I can.  Pull Requests, are also it accepted will make my life a lot easier. Github
-actions are configured on this repostiory, when cloning this repo, please make sure that the current tests pass.
+Bugs and features will be fixed when I can.  Pull Requests, are also it accepted will make my life a lot easier. Github actions are configured on this repostiory, when cloning this repo, please make sure that the current tests pass.
 
 ## Build [&#x219F;](#table-of-contents)
+
+This program is tested and developed on Linux, it may not work on other platforms.  
 
 ```shell
 $ rebar3 compile
