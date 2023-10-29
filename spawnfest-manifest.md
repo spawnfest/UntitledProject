@@ -30,7 +30,8 @@ Note:
   - No AI was used in the making of this project. 
   - Github actions run tests ! 
   - Github actions builds (but doesn't publish) a container, thats on my list.
-  - compiler errors dont make it back to the user, this is a big one. 
+  - compiler errors dont make it back to the user, this is a big one, uh
+  - Need the 'editor' to be able to open multiple html files, otherwise we are a little limited.
 
 Barista isnt showing what happens to error 500s!  I had to bruteforce error conditions !
 
