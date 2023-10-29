@@ -31,5 +31,6 @@ Note:
   - Github actions run tests ! 
   - Github actions builds (but doesn't publish) a container, thats on my list.
 
+Barista isnt showing what happens to error 500s!  I had to bruteforce error conditions !
 
 

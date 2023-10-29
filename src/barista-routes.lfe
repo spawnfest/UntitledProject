@@ -14,11 +14,15 @@
             (mref req 'path)
             req)))
 
-;; (defun write-terms (filename terms)
-;;   (let* ((formatter ((lambda (x) (: io_lib format "~tp.~n" '(x)))))
-;;          )
-;;     (formatter "X = 1.")
-;;     ))
+
+;; write data to a file.
+(defun write-to-file (filename data)
+  (file:write_file "priv/user/user-demo.lfe" data ))
+
+;; compile it.
+(defun compile-data (data)
+  (write-to-file "priv/user/user-demo.lfe" data)
+  (lfe-shell:c "priv/user/user-demo.lfe"))
 
 (defun validate (id req)
   ;; TODO: implement form validation
@@ -57,9 +61,29 @@
        (progn
          (barista-response:ok (erlang:binary_to_list (template:load "chapter2.html")))))
 
+ ('GET #"/live-demo/user-html"
+       (progn
+         (barista-response:ok (erlang:binary_to_list (template:load "template-html.html")))))
+
+ ('PUT #"/live-demo/user-html"
+       (progn
+         ;; FIXME: save the page in priv/user/user-demo.html
+         (barista-response:ok "page saved")))
+
+ ('GET #"/live-demo/user-lfe"
+       (progn
+         (barista-response:ok (erlang:binary_to_list (template:load "template-lfe.html")))))
+
+ ('PUT #"/live-demo/user-lfe"
+       (progn
+         (compile-data (barista-request:get-data req))
+         (barista-response:ok (erlang:binary_to_list (template:load "template-lfe.html")))))
+
  ('GET #"/live-demo"
        (progn
          (barista-response:ok (erlang:binary_to_list (template:load "live.html")))))
+
+
 
  ('GET #"/about"
        (progn
