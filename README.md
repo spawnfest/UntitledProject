@@ -74,7 +74,7 @@ $ rebar3 lfe compile
 
 ```shell
 $ rebar3 lfe repl
-lfe>  (untitled_project:start))
+lfe>  (untitled_project:start)
 ```
 
 # Tests [&#x219F;](#table-of-contents)
