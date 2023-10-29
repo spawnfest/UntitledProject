@@ -83,7 +83,7 @@ Open http://localhost:8888 in your web browser and begin reading.
 # Tests [&#x219F;](#table-of-contents)
 
 ```shell
-$ rebar3 lfe test
+$ rebar3 lfe ltest -tall 
 ```
 
 ## Usage [&#x219F;](#table-of-contents)
