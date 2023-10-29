@@ -1,7 +1,10 @@
 
 <textarea  name="user-lfe" rows="30" cols="120">
-    ;; you can do multi matches here, dont forget.
-    (defun demo-handler (method path (= `#m(body ,body) req))
+    (defmodule users-lfe
+           (export (demo-handler 3)))
+
+;; you can do multi matches here, dont forget.
+(defun demo-handler (method path req)
       (barista-response:ok (erlang:binary_to_list (template:load "demo-response.html"))))
 </textarea>
 

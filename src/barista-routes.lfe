@@ -1,7 +1,11 @@
 (defmodule barista-routes
            (export (do 1)
                    (handle 3)
-                   (validate 2)))
+                   (validate 2)
+                   (compile-data 1)
+                   (compile-file 1)
+                   (write-to-file 2)
+                   ))
 
 (include-lib "include/macros.lfe")
 (include-lib "logjam/include/logjam.hrl")
@@ -17,12 +21,18 @@
 
 ;; write data to a file.
 (defun write-to-file (filename data)
-  (file:write_file "priv/user/user-demo.lfe" data ))
+  (file:write_file filename data ))
+
+
+;;compile a file
+(defun compile-file (filename)
+  (: lfe-shell c filename))
 
 ;; compile it.
 (defun compile-data (data)
-  (write-to-file "priv/user/user-demo.lfe" data)
-  (lfe-shell:c "priv/user/user-demo.lfe"))
+  (write-to-file "/tmp/user-demo.lfe" data)
+  (compile-file "/tmp/user-demo.lfe"))
+
 
 (defun validate (id req)
   ;; TODO: implement form validation
