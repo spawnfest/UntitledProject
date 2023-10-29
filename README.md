@@ -21,9 +21,9 @@
 
 ## About [&#x219F;](#table-of-contents)
 
-🚀 HTMX is not just another web development library; it's pure web development magic! Think of it as your secret potion to create dynamic, inte ractive, and fast web applications with minimal effort.   No "React" in sight, no frameworks.  We bring the "Hype" back into Hyper Text Markup Language.
+🚀 HTMX is not just another web development library; it's pure web development magic! Think of it as your secret potion to create dynamic, interactive, and fast web applications with minimal effort.   No "React" in sight, no frameworks.  We bring the "Hype" back into Hyper Text Markup Language.
 
-The Untitled Project is ultimately a learning tool.  Its an interactive experience that demonstrates the
+The Untitled Project is basically a learning tool.  Its an interactive experience that demonstrates the
 unstopable power of using Lisp Flavored Erlang on the backend and HTMX on the front.
 
 Each micro lesson provides both backend and frontend code for the reader to observe and interact with while
@@ -85,7 +85,7 @@ Copyright © 2023, Wade Mealing <wmealing@gmail.com>.
 <!-- Named page links below: /-->
 
 [logo]: https://avatars1.githubusercontent.com/u/3434967?s=250
-[logo-large]: https://avatars1.githubusercontent.com/u/3434967
+[logo-large]: https://github.com/spawnfest/UntitledProject/blob/main/priv/images/lazer-bison.jpeg
 [github]: https://github.com/spawnfest/UntitledProject
 [gh-actions-badge]: https://github.com/spawnfest/UntitledProject/workflows/build/badge.svg
 [gh-actions]: https://github.com/spawnfest/UntitledProject/actions?query=workflow%3Abuild+
