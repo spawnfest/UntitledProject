@@ -1,4 +1,4 @@
-# Untitled Project - The Cyber Laser Bison Story.
+# Untitled Project - The Tank Bison with Lazer Eyes Story.
 
 [![Build Status][gh-actions-badge]][gh-actions]
 [![LFE Versions][lfe badge]][lfe]
@@ -30,6 +30,30 @@ unstopable power of using Lisp Flavored Erlang on the backend and HTMX on the fr
 
 Each micro lesson provides both backend and frontend code for the reader to observe and interact with while
 not having to setup the full stack in a safe and controlled environment.
+
+## Rationale [&#x219F;](#table-of-contents)
+
+
+### Why HTMX ?
+Matt.sh talks about <a href="https://matt.sh/htmx-is-a-erlang"> HTMX being an erlang </a>, While there is
+more to erlang than self-upgrading its still very cool.
+
+HTMX puts development of Single Page Applications (SPA, apparently web pages are apps).  It appears to do
+most of the common webappy stuff with markup instead of writing oodles of javascript.
+
+
+### Why Lisp Flavored Erlang
+
+Lisp Flavored Erlang has tickled my fancy for a while.  I haven't had enough time to really dive into
+the feature and use it in production.  I have written common lisp and erlang for some time now, deploying
+both into production.
+
+Erlang is the T-800 terminator of programming languages, when its hit or crashes it just gets right back up.  Lisp
+Flavored Erlang provides alien technology to Erlang raising the bar once again.
+
+This verion of TBWLE (Untitled Project) intends to demonstrate HTMX and LFE, I will continue to feed my learning
+back into this project as I learn new skills.
+
 
 ## Build [&#x219F;](#table-of-contents)
 
@@ -66,7 +90,7 @@ TBD
 
 ☐ Add github action to create container
 
- ☐ Update instructions on how to run container.
+☐ Update instructions on how to run container.
 
 ☐ Create a playground which serves up simple editable html page and a lfe handler.
 

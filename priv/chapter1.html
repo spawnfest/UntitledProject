@@ -43,34 +43,43 @@
     </h1>
     <b>Setting up your HTML.</b>
 
-    <div class="py-5">
+    <div>
 
-      <p class="py-5">
-        In the introduction, I talked about not having to write javascript.  Which is mostly true,
-        we still however need to include some javascript to supercharge our standard elements. 
-        The first step is to include the HTMX script inside the  &lt;head&gt; &lt;/head&gt; tags
+      <p>
+        In the introduction, we talked about not having to write javascript.  Which is mostly true,
+        we still however need to include the HTMX javascript library to supercharge our standard
+        elements. The first step is to include the HTMX script inside the  &lt;head&gt; &lt;/head&gt; tags
         of your HTML document.
       </p>
 
-      <p class="py-5">
-        At the time of writing the most current is: 
+      <p>
+        Here is the method of including the latest version at the time of writing.
       </p>
 
       <p class="py-5">
 	   &lt;script src=&quot;https://unpkg.com/htmx.org@1.9.6&quot;&gt;&lt;/script&gt;
       </p>
 
-      <p class="py-5">
-        Without this the extra attributes on html markup wont do anything, so best to include
-        it if you want the magic to happen.
+      <p>
+        Adding the htmx library creates actions based on the specific attributes of HTML tags,
+        its pretty neat.
       </p>
 
       <b>The simplest example.</b>
 
-      <p class="py-5">
-        Most time, button clicks trigger a javascript event, this might be a server query
-        or a modification of the page.  HTMX reduces this complexity to elements on any html
-        element.  Check this out:
+      <p>
+        When working in anything new, starting with the simplest (or smallest) example allows
+        you to create and test without introducing complexity and errors into your environment.
+      <p>
+
+      <p>
+        In this minimal example, we will demonstrate how to use LFE/HTMX with the humble &lt;button&gt; element.
+
+      <p>
+      <p>
+        In the 'common' use scenario, button clicks trigger a javascript event.  
+
+        HTMX reduces this complexity to elements on any html element.  Check this out:
       </p>
 
       <br>
